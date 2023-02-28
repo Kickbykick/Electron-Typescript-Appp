@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow,ipcMain } from 'electron';
 import * as path from 'path';
 import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-installer";
 
@@ -33,6 +33,10 @@ function createWindow() {
     });
   }
 }
+
+ipcMain.handle('do-thing', (event, message) => {
+  console.log('Hello, Trying!');
+});
 
 app.whenReady().then(() => {
   // DevTools

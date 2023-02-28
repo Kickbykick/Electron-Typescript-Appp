@@ -2,6 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const doThing = () => {
+    window.electron.doThing();
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,8 @@ function App() {
         >
           Learn React
         </a>
+
+        <button onClick={doThing}>Click me</button >
       </header>
     </div>
   );
